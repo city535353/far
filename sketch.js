@@ -15,14 +15,14 @@ let classifier;
 const options = { probabilityThreshold: 0.8 };
 
 // Teachable Machine model URL:
-let soundModel = './model/';
+//let soundModel = './model/';
 
 
 // Label (start by showing listening)
 let label = "開始收音";
 
 // Teachable Machine model URL:
-let soundModelURL = 'https://city535353.github.io/frogdetect/model/model.json';
+let soundModelURL = 'https://city535353.github.io/far/model/model.json';
 
 
 function preload() {
@@ -43,7 +43,7 @@ function draw() {
   fill(255);
   textSize(32);
   textAlign(CENTER, CENTER);
-  //ThunkableWebviewerExtension.postMessage(label);
+  ThunkableWebviewerExtension.postMessage(label);
   text(label, width / 2, height / 2);
   
   
