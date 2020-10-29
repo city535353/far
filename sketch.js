@@ -12,17 +12,17 @@ This example uses p5 preload function to create the classifier
 // Global variable to store the classifier
 let classifier;
 
-const options = { probabilityThreshold: 0.8 };
+const options = { probabilityThreshold: 0.9 };
 
 // Teachable Machine model URL:
-//let soundModel = './model/';
+let soundModel = './model/';
 
 
 // Label (start by showing listening)
-let label = "開始收音";
+let label = "載入模型";
 
 // Teachable Machine model URL:
-let soundModelURL = 'https://city535353.github.io/far/model/model.json';
+let soundModelURL = 'https://city535353.github.io/far/model.json';
 
 
 function preload() {
@@ -32,6 +32,7 @@ function preload() {
 
 function modelready() {
   createCanvas(320, 240);
+  label = "開始收音";
   // Start classifying
   // The sound model will continuously listen to the microphone
   classifier.classify(gotResult);
@@ -43,7 +44,7 @@ function draw() {
   fill(255);
   textSize(32);
   textAlign(CENTER, CENTER);
-  ThunkableWebviewerExtension.postMessage(label);
+  //ThunkableWebviewerExtension.postMessage(label);
   text(label, width / 2, height / 2);
   
   
@@ -58,17 +59,16 @@ function gotResult(error, results) {
   }
   // The results are in an array ordered by confidence.
   // console.log(results[0]); results[0].label
+  /*
   if(results[0].label == 'mose') {
 	label = "莫式樹蛙";
   }else if(results[0].label == 'taipei'){
 	label = "台北樹蛙";
   }else if(results[0].label == 'draw'){
 	label = "諸羅樹蛙" ;
-  }else{
-	label = "未發現";  
   }
-   
-  //label = results[0].label;
+   */
+  label = results[0].label;
   
 }
 
