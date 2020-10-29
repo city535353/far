@@ -19,13 +19,14 @@ let soundModel = './model/';
 
 
 // Label (start by showing listening)
-let label = "載入模型";
+let label = "";
 
 // Teachable Machine model URL:
 let soundModelURL = 'https://city535353.github.io/far/model.json';
 
 
 function preload() {
+  label = "載入模型"
   // Load the model
   classifier = ml5.soundClassifier(soundModelURL,options,modelready);
 }
