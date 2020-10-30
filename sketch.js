@@ -20,7 +20,7 @@ let soundModel = './model/';
 
 // Label (start by showing listening)
 let label = "";
-
+let temp="";
 // Teachable Machine model URL:
 let soundModelURL = 'https://city535353.github.io/far/model.json';
 
@@ -45,8 +45,11 @@ function draw() {
   fill(255);
   textSize(32);
   textAlign(CENTER, CENTER);
-  //ThunkableWebviewerExtension.postMessage(label);
   text(label, width / 2, height / 2);
+  //if (label != temp){
+	  ThunkableWebviewerExtension.postMessage(label);
+	  temp = label;
+  //}
   
   
 }
@@ -60,7 +63,8 @@ function gotResult(error, results) {
   }
   // The results are in an array ordered by confidence.
   // console.log(results[0]); results[0].label
-  /*
+  
+  label = "開始收音";
   if(results[0].label == 'mose') {
 	label = "莫式樹蛙";
   }else if(results[0].label == 'taipei'){
@@ -68,8 +72,8 @@ function gotResult(error, results) {
   }else if(results[0].label == 'draw'){
 	label = "諸羅樹蛙" ;
   }
-   */
-  label = results[0].label;
+   
+  //label = results[0].label;
   
 }
 
