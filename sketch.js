@@ -52,10 +52,10 @@ function draw() {
 }
 
 function postvalue(){
-  if (label != temp){
+  //if (label != temp){
 	  ThunkableWebviewerExtension.postMessage(label);
 	  temp = label;
-  }
+  //}
   setTimeout(postvalue, 1000);
 }
 
