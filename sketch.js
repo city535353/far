@@ -20,7 +20,7 @@ let soundModel = './model/';
 
 // Label (start by showing listening)
 let label = "";
-let temp="";
+let temp = "";
 // Teachable Machine model URL:
 let soundModelURL = 'https://city535353.github.io/far/model.json';
 
@@ -46,12 +46,16 @@ function draw() {
   textSize(32);
   textAlign(CENTER, CENTER);
   text(label, width / 2, height / 2);
-  //if (label != temp){
+
+  
+}
+
+function postvalue(){
+  if (label != temp){
 	  ThunkableWebviewerExtension.postMessage(label);
 	  temp = label;
-  //}
-  
-  
+  }
+  setTimeout(postvalue, 1000);
 }
 
 
@@ -64,7 +68,7 @@ function gotResult(error, results) {
   // The results are in an array ordered by confidence.
   // console.log(results[0]); results[0].label
   
-  label = "開始收音";
+  
   if(results[0].label == 'mose') {
 	label = "莫式樹蛙";
   }else if(results[0].label == 'taipei'){
