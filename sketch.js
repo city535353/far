@@ -42,10 +42,10 @@ function modelready() {
 }
 
 function draw() {
-  if (label !== temp){
+//  if (label !== temp){
 	 ThunkableWebviewerExtension.postMessage(label);
 	 temp = label; 
-  }
+//  }
   background(0);
   // Draw the label in the canvas
   fill(255);
