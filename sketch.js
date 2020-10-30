@@ -42,17 +42,17 @@ function modelready() {
 }
 
 function draw() {
-//  if (label !== temp){
-	 ThunkableWebviewerExtension.postMessage(label);
-	 temp = label; 
-//  }
+
   background(0);
   // Draw the label in the canvas
   fill(255);
   textSize(32);
   textAlign(CENTER, CENTER);
   text(label, width / 2, height / 2);
-
+//  if (label !== temp){
+	 ThunkableWebviewerExtension.postMessage(label);
+	 temp = label; 
+//  }
   
 }
 
