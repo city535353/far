@@ -29,7 +29,7 @@ function preload() {
   label = "載入模型"
   // Load the model
   classifier = ml5.soundClassifier(soundModelURL,options,modelready);
-  postvalue();
+  
 }
 
 function modelready() {
@@ -37,6 +37,7 @@ function modelready() {
   label = "開始收音";
   // Start classifying
   // The sound model will continuously listen to the microphone
+  postvalue();
   classifier.classify(gotResult);
 }
 
