@@ -37,7 +37,6 @@ function modelready() {
   label = "開始收音";
   // Start classifying
   // The sound model will continuously listen to the microphone
-  postvalue();
   classifier.classify(gotResult);
 }
 
