@@ -29,6 +29,7 @@ function preload() {
   label = "載入模型"
   // Load the model
   classifier = ml5.soundClassifier(soundModelURL,options,modelready);
+  postvalue();
 }
 
 function modelready() {
