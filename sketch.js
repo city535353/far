@@ -48,6 +48,7 @@ function draw() {
   textSize(32);
   textAlign(CENTER, CENTER);
   text(label, width / 2, height / 2);
+  ThunkableWebviewerExtension.postMessage(label);
   
 }
 
@@ -70,7 +71,7 @@ function gotResult(error, results) {
 	label = "諸羅樹蛙" ;
   }
   
-  ThunkableWebviewerExtension.postMessage(label);
+  
 	 
 }
 
