@@ -15,7 +15,7 @@ let classifier;
 const options = { probabilityThreshold: 0.9 };
 
 // Teachable Machine model URL:
-let soundModel = './model/';
+
 
 
 // Label (start by showing listening)
@@ -48,10 +48,6 @@ function draw() {
   textSize(32);
   textAlign(CENTER, CENTER);
   text(label, width / 2, height / 2);
-//  if (label !== temp){
-	 ThunkableWebviewerExtension.postMessage(label);
-	 temp = label; 
-//  }
   
 }
 
@@ -64,7 +60,7 @@ function gotResult(error, results) {
   }
   // The results are in an array ordered by confidence.
   // console.log(results[0]); results[0].label
-  
+  //label = results[0].label;
   
   if(results[0].label == 'mose') {
 	label = "莫式樹蛙";
@@ -73,9 +69,9 @@ function gotResult(error, results) {
   }else if(results[0].label == 'draw'){
 	label = "諸羅樹蛙" ;
   }
-   
-  //label = results[0].label;
   
+  ThunkableWebviewerExtension.postMessage(label);
+	 
 }
 
 
