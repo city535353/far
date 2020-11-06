@@ -22,7 +22,7 @@ const options = { probabilityThreshold: 0.9 };
 let label = "";
 let temp = "";
 // Teachable Machine model URL:
-let soundModelURL = 'https://city535353.github.io/far/model.json';
+let soundModelURL = 'https://city535353.github.io/far/model/model2.json';
 
 
 function preload() {
@@ -61,8 +61,8 @@ function gotResult(error, results) {
   }
   // The results are in an array ordered by confidence.
   // console.log(results[0]); results[0].label
-  //label = results[0].label;
-  
+  label = results[0].label;
+/*  
   if(results[0].label == 'mose') {
 	label = "莫式樹蛙";
   }else if(results[0].label == 'taipei'){
@@ -70,7 +70,7 @@ function gotResult(error, results) {
   }else if(results[0].label == 'draw'){
 	label = "諸羅樹蛙" ;
   }
-  
+*/ 
   
 	 
 }
